@@ -1,7 +1,7 @@
 module.exports = class {
-    #specifier;
-    get specifier() {
-        return this.#specifier;
+    #value;
+    get value() {
+        return this.#value;
     }
 
     #pkg;
@@ -24,20 +24,26 @@ module.exports = class {
         return this.#subpath;
     }
 
-    #valid;
-    get valid() {
-        return this.#valid;
+    #error;
+    get error() {
+        return this.#error;
     }
 
-    constructor(specifier) {
-        this.#specifier = specifier;
-        if (!specifier.length) throw new Error('Specifier parameter is not defined');
+    get valid() {
+        return !this.#error;
+    }
 
-        const split = specifier.split('/');
+    constructor(value) {
+        this.#value = value;
+        if (!value.length) {
+            this.#error = 'Specifier parameter is not defined';
+            return;
+        }
+
+        const split = value.split('/');
         const scope = split[0].startsWith('@') ? split.shift() : void 0;
         if (!split.length) {
-            // The specifier cannot be only the scope, it is an incomplete package name
-            this.#valid = false;
+            this.#error = 'The specifier cannot be only the scope, it is an incomplete package name';
             return;
         }
 
@@ -47,6 +53,5 @@ module.exports = class {
         this.#version = version;
         this.#vpkg = version ? `${this.#pkg}@${version}` : void 0;
         this.#subpath = split.length ? `./${split.join('/')}` : '.';
-        this.#valid = true;
     }
 }
