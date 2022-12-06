@@ -54,4 +54,9 @@ module.exports = class {
         this.#vpkg = version ? `${this.#pkg}@${version}` : void 0;
         this.#subpath = split.length ? `./${split.join('/')}` : '.';
     }
+
+    toJSON() {
+        const {error, valid, value, pkg, vpkg, version, subpath} = this;
+        return {error, valid, value, pkg, vpkg, version, subpath};
+    }
 }
