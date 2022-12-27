@@ -24,6 +24,11 @@ module.exports = class {
         return this.#subpath;
     }
 
+    #specifier;
+    get specifier() {
+        return this.#specifier;
+    }
+
     #error;
     get error() {
         return this.#error;
@@ -53,6 +58,7 @@ module.exports = class {
         this.#version = version;
         this.#vpkg = version ? `${this.#pkg}@${version}` : void 0;
         this.#subpath = split.length ? `./${split.join('/')}` : '.';
+        this.#specifier = this.#pkg + (this.#subpath === '.' ? '' : this.#subpath.slice(1));
     }
 
     toJSON() {
