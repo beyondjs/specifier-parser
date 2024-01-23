@@ -14,9 +14,9 @@
 	"deployment": {
 		"distributions": [
 			{
-				"name": "web",
+				"name": "node",
 				"environment": "development",
-				"platform": "web",
+				"platform": "node",
 				"ports": {
 					"bundles": 3480
 				}

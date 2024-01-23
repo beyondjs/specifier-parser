@@ -6,8 +6,8 @@ var BEE = require('@beyond-js/bee');
 const port = '950';
 test('bee', async () => {
 	BEE(`http://localhost:${port}`, {});
-
-	const module = await bimport('@beyond-js/reactive@1.1.9/model');
+	//import { PackageSpecifier } from '@beyond-js/specifier-parser/main';
+	const module = await bimport('@beyond-js/specifier-parser@0.0.1/main');
 	console.log(33, module);
 	expect(3).toBe(3);
 });
