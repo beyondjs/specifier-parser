@@ -1,7 +1,7 @@
 FROM node:18
 
 # Set the working directory in the container
-WORKDIR /workspaces/ailearn
+WORKDIR /workspaces/specifier-parser
 
 # Make the script executable
 # RUN chmod +x .devcontainer/install_dependencies.sh
@@ -9,4 +9,4 @@ WORKDIR /workspaces/ailearn
 ENV LANG="C.UTF-8"
 
 # Install beyond
-RUN npm i -g beyond@1.2.0-beta.4 @beyond-js/scaffolding
+RUN npm i -g beyond@1.2.0 @beyond-js/scaffolding

@@ -10,7 +10,7 @@ interface PackageInfo {
 }
 
 // PackageSpecifier class to parse and validate package specifiers
-export class PackageSpecifier implements PackageInfo {
+export /*bundle*/ class PackageSpecifier implements PackageInfo {
 	// Original package specifier value
 	#value: string;
 	public get value(): string {

@@ -1,10 +1,26 @@
 {
-  "name": "@beyond-js/specifier-parser",
-  "author": "BeyondJS",
-  "email": "hello@beyondjs.com",
-  "version": "0.0.3",
-  "license": "MIT",
-  "repository": "https://github.com/beyondjs/specifier-parser",
-  "dependencies": {
-  }
+	"name": "@beyond-js/specifier-parser",
+	"author": "BeyondJS",
+	"email": "hello@beyondjs.com",
+	"version": "0.0.1",
+	"license": "MIT",
+	"repository": "https://github.com/beyondjs/specifier-parser",
+	"modules": {
+		"path": "modules"
+	},
+	"dependencies": {
+		"@beyond-js/kernel": "~0.1.9"
+	},
+	"deployment": {
+		"distributions": [
+			{
+				"name": "web",
+				"environment": "development",
+				"platform": "web",
+				"ports": {
+					"bundles": 3480
+				}
+			}
+		]
+	}
 }
