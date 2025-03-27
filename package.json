@@ -2,7 +2,7 @@
 	"name": "@beyond-js/specifier-parser",
 	"author": "BeyondJS",
 	"email": "hello@beyondjs.com",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"license": "MIT",
 	"repository": "https://github.com/beyondjs/specifier-parser",
 	"modules": {
